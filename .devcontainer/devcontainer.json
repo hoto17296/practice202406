@@ -1,0 +1,13 @@
+{
+  "name": "Practice 202406",
+  "dockerComposeFile": "./compose.yml",
+  "service": "workspace",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  }
+}
