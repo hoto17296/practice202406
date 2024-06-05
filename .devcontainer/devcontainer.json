@@ -1,6 +1,6 @@
 {
   "name": "Practice 202406",
-  "dockerComposeFile": "./compose.yml",
+  "dockerComposeFile": ["compose.yml", "compose.env.yml"],
   "service": "workspace",
   "workspaceFolder": "/workspace",
   "customizations": {
