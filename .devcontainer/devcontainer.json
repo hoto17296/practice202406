@@ -31,6 +31,11 @@
             "source.organizeImports": "explicit"
           }
         },
+        "[prisma]": {
+          "editor.defaultFormatter": "Prisma.prisma",
+          "editor.formatOnSave": true,
+          "editor.formatOnSaveMode": "file"
+        },
         "prettier.semi": false,
         "python.languageServer": "Pylance",
         "python.analysis.typeCheckingMode": "basic",

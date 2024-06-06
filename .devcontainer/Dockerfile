@@ -19,6 +19,7 @@ WORKDIR /workspace
 COPY . .
 
 RUN cd backend && poetry install --with dev
+RUN prisma generate --schema postgres/schema.prisma
 
 RUN cd frontend && bun install
 RUN bash generate-api-spec.sh

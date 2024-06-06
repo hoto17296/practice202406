@@ -9,6 +9,7 @@ generator client {
   recursive_type_depth = 5
 }
 
+/// @Python(instance_name: "access_log")
 model AccessLog {
   id           String   @id @default(cuid())
   request_time DateTime @default(now())

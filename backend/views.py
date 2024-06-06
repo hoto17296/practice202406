@@ -4,8 +4,6 @@ from pydantic import BaseModel
 
 router = APIRouter()
 
-db = Prisma()
-
 
 class GetCounterCountResponse(BaseModel):
     count: int
@@ -13,9 +11,8 @@ class GetCounterCountResponse(BaseModel):
 
 @router.get("/counter/count")
 async def get_counter_count() -> GetCounterCountResponse:
-    await db.connect()
-    count = await db.accesslog.count()
-    await db.disconnect()
+    async with Prisma() as db:
+        count = await db.access_log.count()
     return GetCounterCountResponse(count=count)
 
 
@@ -25,8 +22,7 @@ class PostCounterIncrementResponse(BaseModel):
 
 @router.post("/counter/increment")
 async def post_counter_increment() -> PostCounterIncrementResponse:
-    await db.connect()
-    await db.accesslog.create({})
-    count = await db.accesslog.count()
-    await db.disconnect()
+    async with Prisma() as db:
+        await db.access_log.create({})
+        count = await db.access_log.count()
     return PostCounterIncrementResponse(count=count)
