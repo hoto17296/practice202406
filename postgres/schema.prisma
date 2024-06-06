@@ -1,0 +1,17 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider             = "prisma-client-py"
+  interface            = "asyncio"
+  recursive_type_depth = 5
+}
+
+model AccessLog {
+  id           String   @id @default(cuid())
+  request_time DateTime @default(now())
+
+  @@map("access_log")
+}
