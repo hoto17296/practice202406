@@ -30,6 +30,7 @@
             "source.organizeImports": "explicit"
           }
         },
+        "prettier.semi": false,
         "python.languageServer": "Pylance",
         "python.analysis.typeCheckingMode": "basic",
         "python.analysis.extraPaths": ["/usr/local/lib/python3.12/site-packages"],
