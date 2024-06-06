@@ -1,20 +1,14 @@
 from os import getenv
 
-import asyncpg
 from fastapi import FastAPI
-from pydantic import BaseModel
+from views import router
 
-app = FastAPI()
+DEBUG = bool(int(getenv("DEBUG", "0")))
 
+app = FastAPI(
+    docs_url="/api/docs" if DEBUG else None,
+    redoc_url=None,
+    openapi_url="/api/openapi.json" if DEBUG else None,
+)
 
-class GetCounterResponse(BaseModel):
-    count: int
-
-
-@app.get("/counter")
-async def get_counter() -> GetCounterResponse:
-    conn = await asyncpg.connect(getenv("DATABASE_URL"))
-    await conn.execute("INSERT INTO access_log DEFAULT VALUES")
-    count: int = await conn.fetchval("SELECT COUNT(1) FROM access_log")
-    conn.close()
-    return GetCounterResponse(count=count)
+app.include_router(router, prefix="/api")

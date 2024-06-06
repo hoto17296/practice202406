@@ -3,6 +3,7 @@
   "dockerComposeFile": ["compose.yml", "compose.env.yml"],
   "service": "workspace",
   "workspaceFolder": "/workspace",
+  "forwardPorts": [8080],
   "customizations": {
     "vscode": {
       "extensions": [
@@ -31,7 +32,8 @@
         },
         "python.languageServer": "Pylance",
         "python.analysis.typeCheckingMode": "basic",
-        "python.analysis.extraPaths": ["/usr/local/lib/python3.12/site-packages"]
+        "python.analysis.extraPaths": ["/usr/local/lib/python3.12/site-packages"],
+        "remote.autoForwardPorts": false
       }
     }
   }
