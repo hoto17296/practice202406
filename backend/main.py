@@ -1,8 +1,10 @@
 from os import getenv
-from fastapi import FastAPI
+
 import asyncpg
+from fastapi import FastAPI
 
 app = FastAPI()
+
 
 @app.get("/counter")
 async def get_counter():
