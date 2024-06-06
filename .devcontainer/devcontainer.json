@@ -4,6 +4,7 @@
   "service": "workspace",
   "workspaceFolder": "/workspace",
   "forwardPorts": [8080],
+  "postCreateCommand": ".devcontainer/post-create.sh",
   "customizations": {
     "vscode": {
       "extensions": [

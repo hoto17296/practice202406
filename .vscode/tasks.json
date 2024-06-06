@@ -10,7 +10,7 @@
     {
       "label": "Start frontend dev server",
       "type": "shell",
-      "command": "cd frontend && bun run dev",
+      "command": "cd frontend && npm run dev",
       "problemMatcher": []
     },
     {
