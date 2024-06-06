@@ -4,6 +4,10 @@ FROM python:3.12
 RUN apt-get update && apt-get install -y nginx
 COPY .devcontainer/nginx.conf /etc/nginx/sites-available/default
 
+# Bun
+RUN curl -fsSL https://bun.sh/install | bash
+ENV PATH $PATH:/root/.bun/bin
+
 # Poetry
 ENV POETRY_HOME=/etc/poetry
 RUN curl -sSL https://install.python-poetry.org | python -
