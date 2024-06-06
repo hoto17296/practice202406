@@ -12,5 +12,6 @@ services:
 
 ## Start development
 0. Open repository in devcontainer
-0. Run `Start FastAPI dev server` task
-0. Access to http://localhost:8000/
+0. Run `Start backend dev server` task
+0. Run `Start frontend dev server` task
+0. Access to http://localhost:8080/
