@@ -21,5 +21,6 @@ COPY . .
 RUN cd backend && poetry install --with dev
 
 RUN cd frontend && bun install
+RUN bash generate-api-spec.sh
 
 CMD ["nginx", "-g", "daemon off;"]

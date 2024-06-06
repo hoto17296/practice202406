@@ -12,6 +12,12 @@
       "type": "shell",
       "command": "cd frontend && bun run dev",
       "problemMatcher": []
-    }
+    },
+    {
+      "label": "Generate api-spec.d.ts",
+      "type": "shell",
+      "command": "bash generate-api-spec.sh",
+      "problemMatcher": []
+    },
   ]
 }
