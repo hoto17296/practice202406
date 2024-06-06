@@ -28,7 +28,10 @@
           "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
           }
-        }
+        },
+        "python.languageServer": "Pylance",
+        "python.analysis.typeCheckingMode": "basic",
+        "python.analysis.extraPaths": ["/usr/local/lib/python3.12/site-packages"]
       }
     }
   }
