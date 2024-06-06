@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start FastAPI dev server",
+      "type": "shell",
+      "command": "fastapi dev backend/main.py",
+      "problemMatcher": []
+    }
+  ]
+}
