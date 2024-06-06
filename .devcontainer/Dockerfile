@@ -9,7 +9,7 @@ RUN curl -fsSL https://bun.sh/install | bash
 ENV PATH $PATH:/root/.bun/bin
 
 # Poetry
-ENV POETRY_HOME=/etc/poetry
+ENV POETRY_HOME /etc/poetry
 RUN curl -sSL https://install.python-poetry.org | python -
 ENV PATH $POETRY_HOME/bin:$PATH
 RUN poetry config virtualenvs.create false
@@ -19,5 +19,7 @@ WORKDIR /workspace
 COPY . .
 
 RUN cd backend && poetry install --with dev
+
+RUN cd frontend && bun install
 
 CMD ["nginx", "-g", "daemon off;"]

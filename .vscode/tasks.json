@@ -2,9 +2,15 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Start FastAPI dev server",
+      "label": "Start backend dev server",
       "type": "shell",
       "command": "fastapi dev backend/main.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Start frontend dev server",
+      "type": "shell",
+      "command": "cd frontend && bun run dev",
       "problemMatcher": []
     }
   ]
