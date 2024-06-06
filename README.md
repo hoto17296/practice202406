@@ -12,5 +12,5 @@ services:
 
 ## Start development
 0. Open repository in devcontainer
-0. Run `fastapi dev backend/main.py` in terminal
+0. Run `Start FastAPI dev server` task
 0. Access to http://localhost:8000/
