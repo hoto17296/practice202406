@@ -1,9 +1,7 @@
 services:
 
   workspace:
-    build:
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
+    build: .
     command: nginx -g 'daemon off;'
     environment:
       DATABASE_URL: postgresql://postgres:deadbeef@postgres/postgres
