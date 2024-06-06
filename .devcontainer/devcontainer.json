@@ -1,11 +1,12 @@
 {
-  "name": "Practice 202406",
+  "name": "practice202406",
   "dockerComposeFile": ["compose.yml", "compose.env.yml"],
   "service": "workspace",
   "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "extensions": [
+        "cweijan.vscode-database-client2",
         "ms-python.python"
       ]
     }

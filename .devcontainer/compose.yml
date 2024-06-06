@@ -1,8 +1,22 @@
 services:
+
   workspace:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
     command: sleep infinity
+    environment:
+      DATABASE_URL: postgresql://postgres:deadbeef@postgres/postgres
     volumes:
       - ..:/workspace:cached
+
+  postgres:
+    image: postgres:15
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ../postgres/initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_PASSWORD: deadbeef
+
+volumes:
+  postgres:
