@@ -19,5 +19,11 @@
       "command": "bash generate-api-spec.sh",
       "problemMatcher": []
     },
+    {
+      "label": "Push database schema",
+      "type": "shell",
+      "command": "prisma db push --schema postgres/schema.prisma",
+      "problemMatcher": []
+    },
   ]
 }
