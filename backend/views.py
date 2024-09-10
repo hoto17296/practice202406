@@ -1,3 +1,4 @@
+from database import db
 from fastapi import APIRouter
 from prisma import Prisma
 from pydantic import BaseModel
@@ -22,7 +23,6 @@ class PostCounterIncrementResponse(BaseModel):
 
 @router.post("/counter/increment")
 async def post_counter_increment() -> PostCounterIncrementResponse:
-    async with Prisma() as db:
-        await db.access_log.create({})
-        count = await db.access_log.count()
+    await db.access_log.create({})
+    count = await db.access_log.count()
     return PostCounterIncrementResponse(count=count)
