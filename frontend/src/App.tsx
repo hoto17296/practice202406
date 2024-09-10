@@ -1,32 +1,30 @@
-import { Fetcher } from "openapi-typescript-fetch"
+import createClient from "openapi-fetch"
 import { useEffect, useState } from "react"
 import type { paths } from "./api-spec"
 
-const fetcher = Fetcher.for<paths>()
-
-const getCounterCount = fetcher
-  .path("/api/counter/count")
-  .method("get")
-  .create()
-
-const postCounterIncrement = fetcher
-  .path("/api/counter/increment")
-  .method("post")
-  .create()
+const api = createClient<paths>()
 
 function App() {
   const [count, setCount] = useState<number>()
 
   useEffect(() => {
     async function fetch() {
-      const { data } = await getCounterCount({})
+      const { data, error } = await api.GET("/api/counter/count")
+      if (error) {
+        console.error(error)
+        throw new Error("error occurred")
+      }
       setCount(data.count)
     }
     fetch()
   }, [])
 
   async function increment() {
-    const { data } = await postCounterIncrement({})
+    const { data, error } = await api.POST("/api/counter/increment")
+    if (error) {
+      console.error(error)
+      throw new Error("error occurred")
+    }
     setCount(data.count)
   }
 
