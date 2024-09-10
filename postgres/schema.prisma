@@ -13,6 +13,7 @@ generator client {
 model AccessLog {
   id           String   @id @default(uuid())
   request_time DateTime @default(now())
+  metadata     Json     @default("{}")
 
   @@map("access_log")
 }
