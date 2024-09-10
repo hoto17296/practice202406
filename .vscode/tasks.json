@@ -20,9 +20,9 @@
       "problemMatcher": []
     },
     {
-      "label": "Push database schema",
+      "label": "Update database schema",
       "type": "shell",
-      "command": "prisma db push --schema postgres/schema.prisma",
+      "command": "prisma migrate dev --schema postgres/schema.prisma",
       "problemMatcher": []
     },
   ]

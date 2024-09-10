@@ -11,7 +11,7 @@ generator client {
 
 /// @Python(instance_name: "access_log")
 model AccessLog {
-  id           String   @id @default(cuid())
+  id           String   @id @default(uuid())
   request_time DateTime @default(now())
 
   @@map("access_log")
